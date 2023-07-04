@@ -247,6 +247,30 @@ class Contacts(object):
 
     def list_all_custom_field_values(self):
         return self.client._get("/fieldValues")
+    
+    def retrieve_a_contacts_field_values(self, contact_id):
+        return self.client._get("/contacts/{}/fieldValues".format(contact_id))
+    
+    def retrieve_a_contacts_tracking_logs(self, contact_id):
+        return self.client._get("/contacts/{}/trackingLogs".format(contact_id))
+    
+    def retrieve_a_contacts_data(self, contact_id):
+        return self.client._get("/contacts/{}/contactData".format(contact_id))
+    
+    def retrieve_a_contacts_bounce_logs(self, contact_id):
+        return self.client._get("/contacts/{}/bounceLogs".format(contact_id))
+    
+    def retrieve_a_contacts_geo_ips(self, contact_id):
+        return self.client._get("/contacts/{}/geoIps".format(contact_id))
+    
+    def retrieve_a_contacts_organization(self, contact_id):
+        return self.client._get("/contacts/{}/organization".format(contact_id))
+    
+    def retrieve_a_contacts_account_contacts(self, contact_id):
+        return self.client._get("/contacts/{}/accountContacts".format(contact_id))
+    
+    def retrieve_a_contacts_automation_entry_counts(self, contact_id):
+        return self.client._get("/contacts/{}/automationEntryCounts".format(contact_id))
 
     def add_a_tag_to_contact(self, data):
         """
